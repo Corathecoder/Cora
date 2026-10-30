@@ -1,0 +1,31 @@
+.two-col { display: grid; gap: 2rem; }
+@media (min-width: 900px) { .two-col { grid-template-columns: 1.4fr 1fr; gap: 3rem; } }
+
+/* ---------- About: story ---------- */
+
+.story { padding-bottom: clamp(2rem, 6vw, 4rem); margin-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.story-subhead { font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+.pull-quote {
+  margin: 1.5rem 0 0; padding: 0.4rem 0 0.4rem 1.2rem; border-left: 3px solid var(--leaf);
+  font-family: var(--font-display); font-style: italic; font-size: clamp(1.25rem, 2.6vw, 1.6rem); line-height: 1.35; color: var(--cream);
+}
+.pull-quote p { margin: 0; }
+.progression { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem; grid-template-columns: 1fr; counter-reset: none; }
+@media (min-width: 700px) { .progression { grid-template-columns: repeat(4, 1fr); } }
+.progression li {
+  background: var(--bg-raised); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1rem 1.1rem; font-weight: 700; color: var(--cream); position: relative;
+}
+.progression li span { display: block; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--leaf); margin-bottom: 0.3rem; }
+@media (min-width: 700px) {
+  .progression li:not(:last-child)::after {
+    content: "→"; position: absolute; right: -0.65rem; top: 50%; transform: translateY(-50%);
+    color: var(--sage); font-weight: 400; z-index: 1;
+  }
+}
+.tag-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tag-list li { border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.8rem; font-size: 0.9rem; color: var(--sage); }
+
+/* ---------- Guide pages ---------- */
+
+.chain { list-style: none; padding: 0; margin: 1.5rem 0 0; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
